@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+let jsonValidator = require('../util/jsonValidator');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -8,14 +9,9 @@ router.get('/', function(req, res) {
 
 router.post('/validate-json', function(req, res) {
   let jsonString = req.body.json;
-  console.log("recibido " + jsonString);
+  let result = jsonValidator.validate(jsonString);
+  res.json(result);
 
-  try{
-    let json = JSON.parse(jsonString);
-    res.json({valid: true,json:json});
-  }catch(e){
-    res.json({valid:false,json:null})
-  }
 
 
 });
