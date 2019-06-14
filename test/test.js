@@ -18,29 +18,29 @@ describe("jsonValidator.validate", () => {
 
 });
 
-describe("api", ()=>{
-  it('responds with json with the key valid set to true when you send a valid JSON string', function() {
+describe("api", () => {
+  it('responds with json with the key valid set to true when you send a valid JSON string', function () {
     request(app)
       .post('/validate-json')
-      .send({"json":"{\"user\":\"tom\"}"})
+      .send({"json": "{\"user\":\"tom\"}"})
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .then(response=>{
+      .then(response => {
         //assert(response.body.valid, true)
         expect(response.body.valid).to.equal(true)
       })
   });
 
-  it('responds with json with the key valid set to false when you send an invalid JSON string and json return must be nul', function() {
+  it('responds with json with the key valid set to false when you send an invalid JSON string and json return must be nul', function () {
     request(app)
       .post('/validate-json')
-      .send({"json":"{\"user\"\"tom\"}"})
+      .send({"json": "{\"user\"\"tom\"}"})
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .then(response=>{
+      .then(response => {
         //assert(response.body.valid, true)
         expect(response.body.valid).to.equal(false)
         expect(response.body.json).to.equal(null);
       })
   });
-})
+});
