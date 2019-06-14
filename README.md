@@ -1,6 +1,6 @@
 ## CHALLENGE
 
-the frontend code is inside client folder
+
 
 run with
 
@@ -10,3 +10,8 @@ npm run start
 ```
 
 open the url localhost:5000 
+
+#### REACT APP
+the frontend code is inside the folder *client*
+
+ 
