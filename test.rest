@@ -1,0 +1,17 @@
+POST http://localhost:5000/validate-json
+Content-Type: application/json
+
+{
+  "json":"{\"user\":\"tom\"}"
+}
+
+###
+
+POST http://localhost:5000/validate-json
+Content-Type: application/json
+
+{
+  "json":"{\"user:\"tom\"}"
+}
+
+###

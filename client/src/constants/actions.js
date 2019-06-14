@@ -1,0 +1,5 @@
+export const ADD_JSON_INPUT = "ADD_JSON_INPUT";
+export const DELETE_JSON_INPUT = "DELETE_JSON_INPUT";
+export const SUBMIT_JSON = "SUBMIT_JSON";
+export const CHANGE_APP_STATUS = "CHANGE_APP_STATUS";
+
